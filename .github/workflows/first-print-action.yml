@@ -1,0 +1,17 @@
+name: Log hello.txt content
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  log-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Show the hello.txt content
+        run: |
+          echo "**** hello.txt content *****"
+          cat hello.txt
+          echo "***** end ******"
